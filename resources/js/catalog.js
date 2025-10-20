@@ -59,9 +59,16 @@ document.addEventListener("DOMContentLoaded", () => {
         rangeInputs.forEach((input) =>
             input.addEventListener("input", handleRange)
         );
-        numberInputs.forEach((input) =>
-            input.addEventListener("input", handleNumber)
-        );
+        numberInputs.forEach((input) => {
+            input.addEventListener("blur", handleNumber)
+            input.addEventListener('keydown', e => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    handleNumber();
+                };
+            });
+        });
+
     });
 
     /* === filters__accordion === */
@@ -74,12 +81,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const isOpen = !content.hasAttribute("hidden");
 
             if (isOpen) {
+                header.setAttribute("aria-expanded", "false");
                 content.setAttribute("data-visible", "false");
                 content.style.opacity = 0;
                 content.style.transform = "translateY(-8px)";
                 setTimeout(() => content.setAttribute("hidden", ""), 200);
                 chevron.style.transform = "rotateZ(0deg)";
             } else {
+                header.setAttribute("aria-expanded", "true");
                 content.removeAttribute("hidden");
                 requestAnimationFrame(() => {
                     content.setAttribute("data-visible", "true");

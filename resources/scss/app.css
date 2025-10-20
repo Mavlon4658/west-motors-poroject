@@ -188,7 +188,6 @@ button, input, textarea, li, div {
 }
 .filters .filters__range-input__group {
   position: relative;
-  z-index: 1;
   height: 15px;
   display: flex;
   align-items: center;
@@ -208,8 +207,7 @@ button, input, textarea, li, div {
   background: #17499f;
   border-radius: 4px;
 }
-.filters .filters__range svg,
-.filters .filters__range input[type=range]:not(.val) {
+.filters .filters__range input[type=range] {
   position: absolute;
   left: 0;
   top: 50%;
@@ -221,6 +219,7 @@ button, input, textarea, li, div {
   height: 4px;
   color: transparent;
   background: transparent;
+  pointer-events: none;
 }
 .filters .filters__range input[type=number]::-webkit-outer-spin-button,
 .filters .filters__range input[type=number]::-webkit-inner-spin-button {
@@ -247,6 +246,8 @@ button, input, textarea, li, div {
   border-radius: 1px;
   box-shadow: none;
   border: 0;
+  position: relative;
+  z-index: -1;
 }
 .filters .filters__range input[type=range]::-webkit-slider-thumb {
   border: 0;
@@ -259,9 +260,10 @@ button, input, textarea, li, div {
   -moz-appearance: none;
   -webkit-appearance: none;
   position: relative;
-  z-index: 2;
+  z-index: 5;
   margin-top: -5.5px;
   cursor: pointer;
+  pointer-events: auto;
 }
 .filters .filters__range input[type=range]::-webkit-slider-thumb:active, .filters .filters__range input[type=range]::-webkit-slider-thumb:hover,
 .filters .filters__range input[type=range]::-webkit-slider-thumb:active,
@@ -279,7 +281,7 @@ button, input, textarea, li, div {
   border: 0;
 }
 .filters .filters__range input[type=range]::-moz-range-thumb {
-  z-index: 2;
+  z-index: 5;
   position: relative;
   height: 15px;
   width: 15px;
@@ -291,6 +293,7 @@ button, input, textarea, li, div {
   margin-top: -5.5px;
   background: #d32536;
   cursor: pointer;
+  pointer-events: auto;
 }
 .filters .filters__range input[type=range]::-ms-track {
   width: 100%;
@@ -309,13 +312,14 @@ button, input, textarea, li, div {
   border: 0;
 }
 .filters .filters__range input[type=range]::-ms-thumb {
-  z-index: 2;
+  z-index: 5;
   position: relative;
   height: 15px;
   width: 15px;
   border-radius: 25px;
   background: transparent;
   cursor: pointer;
+  pointer-events: auto;
 }
 .filters .filters__range-fields {
   display: flex;
