@@ -1,0 +1,74 @@
+.social {
+    &__stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    &__card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 27px 13px 14px;
+        border: 1px solid rgba(116, 145, 197, 0.3);
+        border-radius: 3px;
+        background: $color-white;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+        }
+
+        &-telegram::before {
+            background: #4588ff;
+        }
+
+        &-youtube::before {
+            background: $color-red;
+        }
+
+        &-instagram::before {
+            background: #fe0d6d;
+        }
+
+        &-vk::before {
+            background: #396EC9;
+        }
+
+        &-tictok::before {
+            background: $color-black;
+        }
+
+        &-viber::before {
+            background: #774499;
+        }
+
+        &-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        &-count {
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 110%;
+            color: $color-black;
+        }
+
+        &-label {
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 120%;
+            color: rgba(49, 79, 132, 0.41);
+        }
+    }
+}

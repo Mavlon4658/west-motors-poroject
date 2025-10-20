@@ -1,0 +1,21 @@
+@import './normalize',
+        './variables';
+
+body {
+    background: white;
+    color: black;
+    font-weight: 600;
+    font-family: $font-manrope;
+}
+
+button, input, textarea, li, div {
+    font-weight: 600;
+    font-family: $font-manrope
+}
+
+.container {
+    width: calc(100% - 30px);
+    margin: 0 auto;
+}
+
+@import './catalog', './filters', './result', './car-card', './social';

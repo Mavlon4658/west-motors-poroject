@@ -1,0 +1,146 @@
+.car-card {
+    &__head {
+        position: relative;
+        z-index: 1;
+        height: 230px;
+        width: 100%;
+        border-radius: 3px;
+        overflow: hidden;
+        margin-bottom: 18px;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__price {
+        position: absolute;
+        top: 10px;
+        right: 9px;
+        background: #00173e;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-weight: 800;
+        font-size: 26px;
+        line-height: 110%;
+        color: $color-white;
+        border-radius: 3px;
+        padding: 0px 12px;
+        height: 40px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        font-weight: 800;
+        font-size: 21px;
+        line-height: 15px;
+        letter-spacing: -0.01em;
+        color: #15181c;
+    }
+
+    &__info {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 11px;
+        color: $color-my-gray;
+    }
+
+    &__win {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        &-text {
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 12px;
+            color: $color-light-gray;
+        }
+
+        &-code {
+            font-weight: bold;
+            color: $color-my-gray;
+        }
+    }
+
+    &__body {
+        opacity: 0;
+        transform: translateY(-8px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    
+        &[data-visible="true"] {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+    }
+
+    &__feature {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &-text {
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 11px;
+            color: $color-my-gray;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: $color-light-blue;
+        border-radius: 4px;
+        padding: 15px 36px 16px 36px;
+        margin-bottom: 20px;
+    }
+
+    &__auction, &__timer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 120%;
+        color: #394a68;
+    }
+
+    &__toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 10px;
+            color: $color-light-gray;
+        }
+
+        &-icon {
+            transition: .2s ease all;
+        }
+    }
+}
